@@ -1,0 +1,34 @@
+{
+  "name": "pika-todo",
+  "version": "1.0.0",
+  "description": "Todo list powered by pika",
+  "main": "index.js",
+  "scripts": {
+    "dev": "serve",
+    "prepare": "pika install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Heng-Yi Wu <me@henry40408.com>",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/henry40408/pika-todo.git"
+  },
+  "dependencies": {
+    "htm": "^2.2.1",
+    "immer": "^4.0.1",
+    "preact": "^10.0.0"
+  },
+  "devDependencies": {
+    "@pika/web": "^0.6.1",
+    "serve": "^11.2.0"
+  },
+  "@pika/web": {
+    "webDependencies": [
+      "htm",
+      "immer",
+      "preact",
+      "preact/hooks"
+    ]
+  }
+}
