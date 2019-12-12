@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "htm": "./htm.js",
+    "immer": "./immer.js",
+    "preact": "./preact.js",
+    "preact/hooks": "./preact/hooks.js"
+  }
+}
