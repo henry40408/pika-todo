@@ -4,8 +4,8 @@
   "description": "Todo list powered by pika",
   "main": "index.js",
   "scripts": {
-    "dev": "serve",
-    "prepare": "pika install",
+    "dev": "npm run pika && serve",
+    "pika": "pika install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
