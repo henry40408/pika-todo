@@ -1,13 +1,13 @@
-import { createElement, render } from "/web_modules/preact.js";
+import { createElement, h, render } from "./web_modules/preact.js";
 import {
   useCallback,
   useEffect,
   useRef,
   useState
-} from "/web_modules/preact/hooks.js";
-import htm from "/web_modules/htm.js";
+} from "./web_modules/preact/hooks.js";
+import htm from "./web_modules/htm.js";
 
-const html = htm.bind(createElement);
+const html = htm.bind(h);
 
 const App = () => {
   const [todos, setTodos] = useState([
@@ -33,6 +33,13 @@ const App = () => {
     }
   }, [newTodoRef]);
 
+  const _todos = todos.map(({ content, done }) => html`
+    <label>
+      <input type="checkbox" checked=${done} />
+      <span class="label-body">${content}</span>
+    </label>
+  `);
+
   return html`
     <div class="container">
       <h1>Pika Todo</h1>
@@ -47,22 +54,10 @@ const App = () => {
           />
         </div>
       </div>
-      ${todos.map(
-        ({ content, done }) =>
-          html`
-            <label>
-              <input type="checkbox" checked=${done} />
-              <span class="label-body">${content}</span>
-            </label>
-          `
-      )}
+      ${_todos}
     </div>
   `;
 };
 
-render(
-  html`
-    <${App} />
-  `,
-  document.getElementById("app")
-);
+const app = html`<${App} />`;
+render(app, document.getElementById("app"));
