@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "htm": "^2.2.1",
-    "immer": "^4.0.1",
+    "immer": "^8.0.1",
     "preact": "^10.0.0"
   },
   "devDependencies": {
